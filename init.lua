@@ -16,7 +16,7 @@ vim.g.have_nerd_font = false
 vim.o.number = true
 -- You can also add relative line numbers, to help with jumping.
 --  Experiment for yourself to see if you like it!
--- vim.o.relativenumber = true
+vim.o.relativenumber = true
 
 -- Enable mouse mode, can be useful for resizing splits for example!
 vim.o.mouse = 'a'
@@ -585,9 +585,10 @@ require('lazy').setup({
       --  - settings (table): Override the default settings passed when initializing the server.
       --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
       local servers = {
+        elixirls = {},
+        ruby_lsp = {},
         -- clangd = {},
         -- gopls = {},
-        -- pyright = {},
         --
 
         lua_ls = {
@@ -800,6 +801,7 @@ require('lazy').setup({
       -- Load the colorscheme here.
       -- Like many other themes, this one has different styles, and you could load
       -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
+      vim.o.background = 'dark'
       vim.cmd.colorscheme 'rose-pine'
     end,
   },
@@ -922,4 +924,4 @@ require('lazy').setup({
 -- vim: ts=2 sts=2 sw=2 et
 
 -- enables transparency
---vim.cmd 'hi Normal guibg=NONE ctermbg=NONE'
+vim.cmd 'hi Normal guibg=NONE ctermbg=NONE'
